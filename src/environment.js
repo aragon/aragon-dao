@@ -27,6 +27,7 @@ const ENV_VARS = {
   INFURA_API_KEY: process.env.INFURA_API_KEY || null,
   POCKET_API_KEY: process.env.POCKET_API_KEY || null,
   IPFS_RESOLVER: process.env.IPFS_RESOLVER || null,
+  ETHERSCAN_API_KEY: process.env.ETHERSCAN_API_KEY || null,
 }
 
 export function env(name) {

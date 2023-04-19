@@ -126,6 +126,7 @@ function getBackendServicesKeys() {
     infura: env('INFURA_API_KEY'),
     pocket: env('POCKET_API_KEY'),
     ankr: env('ANKR_API_KEY'),
+    etherscan: env('ETHERSCAN_API_KEY'),
   }
 }
 
