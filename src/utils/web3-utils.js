@@ -130,7 +130,7 @@ function getBackendServicesKeys() {
   }
 }
 
-export function getDefaultProvider(chainId = CHAIN_ID) {
+export function getProvider(chainId = CHAIN_ID) {
   if (
     ETHERS_UNSUPPORTED_CHAIN_IDS.includes(chainId) ||
     LOCAL_ETH_NODES.includes(STATIC_ETH_NODE)
@@ -138,9 +138,63 @@ export function getDefaultProvider(chainId = CHAIN_ID) {
     return getStaticProvider()
   }
 
-  return ethers.getDefaultProvider(
-    getEthersNetwork(chainId),
-    getBackendServicesKeys()
+  const providers = []
+  const rpcAPIKeys = getBackendServicesKeys()
+  for (const provider in rpcAPIKeys) {
+    if (!rpcAPIKeys[provider]) continue
+    switch (provider) {
+      case 'alchemy':
+        providers.push(
+          new ethers.providers.AlchemyProvider(
+            getEthersNetwork(chainId),
+            rpcAPIKeys[provider]
+          )
+        )
+        break
+      case 'infura':
+        providers.push(
+          new ethers.providers.InfuraProvider(
+            getEthersNetwork(chainId),
+            rpcAPIKeys[provider]
+          )
+        )
+        break
+      case 'pocket':
+        providers.push(
+          new ethers.providers.PocketProvider(
+            getEthersNetwork(chainId),
+            rpcAPIKeys[provider]
+          )
+        )
+        break
+      case 'ankr':
+        providers.push(
+          new ethers.providers.AnkrProvider(
+            getEthersNetwork(chainId),
+            rpcAPIKeys[provider]
+          )
+        )
+        break
+      case 'etherscan':
+        providers.push(
+          new ethers.providers.EtherscanProvider(
+            getEthersNetwork(chainId),
+            rpcAPIKeys[provider]
+          )
+        )
+        break
+      default:
+        break
+    }
+  }
+
+  if (STATIC_ETH_NODE) {
+    providers.push(getStaticProvider())
+  }
+
+  return new ethers.providers.FallbackProvider(
+    providers,
+    Math.floor(providers / 2) - 1 || 1
   )
 }
 

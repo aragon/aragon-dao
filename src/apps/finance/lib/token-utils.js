@@ -1,7 +1,7 @@
 import { ETHER_TOKEN_VERIFIED_ADDRESSES } from './verified-tokens'
 import { toUtf8String } from 'ethers/lib/utils'
 import { getContract } from '@/hooks/shared/useContract'
-import { getDefaultProvider } from '@/utils/web3-utils'
+import { getProvider } from '@/utils/web3-utils'
 import tokenAbi from '@/abi/minimeToken.json'
 
 const ANJ_MAINNET_TOKEN_ADDRESS = '0xcD62b1C403fa761BAadFC74C525ce2B51780b184'
@@ -101,7 +101,7 @@ export function getPresetTokens(networkType) {
 }
 
 export async function getAccountEthBalance(address) {
-  const provider = getDefaultProvider()
+  const provider = getProvider()
 
   return provider.getBalance(address)
 }
