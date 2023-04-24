@@ -3,7 +3,7 @@ import { Connect } from '@1hive/connect-react'
 import { env } from '@/environment'
 import { getStaticProvider } from '@/utils/web3-utils'
 
-const DEFAULT_IPFS_RESOLVER = 'https://ipfs.blossom.software/ipfs/{cid}{path}'
+const DEFAULT_IPFS_RESOLVER = 'https://ipfs.eth.aragon.network/ipfs/{cid}{path}'
 
 function ConnectProvider({ children }) {
   return (

@@ -1,4 +1,4 @@
-# Aragon DAO [<img height="100" align="right" alt="aragon-logo" src="https://user-images.githubusercontent.com/33203511/217436477-b2dae151-5e47-454c-885f-9158793e6790.png">](https://github.com/BlossomLabs/aragon-dao)
+# Aragon DAO [<img height="100" align="right" alt="aragon-logo" src="https://user-images.githubusercontent.com/33203511/217436477-b2dae151-5e47-454c-885f-9158793e6790.png">](https://github.com/aragon/aragon-dao)
 
 The web app for the Aragon DAO.
 
@@ -12,7 +12,7 @@ The web app for the Aragon DAO.
 1. Git clone this repo.
 
 ```sh
-git clone https://github.com/BlossomLabs/aragon-dao.git
+git clone https://github.com/aragon/aragon-dao.git
 ```
 
 2. Go to directory.
