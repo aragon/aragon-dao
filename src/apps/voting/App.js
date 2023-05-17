@@ -164,7 +164,6 @@ const App = React.memo(function App() {
                         `}
                       />
                     )}
-                    {/*
                     {account && (
                       <Button
                         mode="strong"
@@ -174,7 +173,6 @@ const App = React.memo(function App() {
                         display={compactMode ? 'icon' : 'label'}
                       />
                     )}
-                    */}
                   </>
                 )
               }
