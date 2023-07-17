@@ -1,4 +1,4 @@
-import { env } from '@/environment'
+import { env } from '../environment'
 
 const CHAIN_ID = env('CHAIN_ID')
 
@@ -14,11 +14,11 @@ export const connectors = [
     properties: {
       chainId: CHAIN_ID,
     },
-  },
+  },$
   {
-    id: 'walletconnect',
+    id: 'walletconnectV2',
     properties: {
-      chainId: [CHAIN_ID], // add here to handle more injected chains
+      projectId: env('WALLETCONNECTV2_PROJECTID'),
       rpc: {
         [`${CHAIN_ID}`]: env('STATIC_ETH_NODE'),
       },

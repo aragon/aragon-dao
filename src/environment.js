@@ -28,6 +28,7 @@ const ENV_VARS = {
   POCKET_API_KEY: process.env.POCKET_API_KEY || null,
   IPFS_RESOLVER: process.env.IPFS_RESOLVER || null,
   ETHERSCAN_API_KEY: process.env.ETHERSCAN_API_KEY || null,
+  WALLETCONNECTV2_PROJECTID: process.env.WALLETCONNECTV2_PROJECTID || null,
 }
 
 export function env(name) {
