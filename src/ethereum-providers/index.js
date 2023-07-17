@@ -14,7 +14,7 @@ export const connectors = [
     properties: {
       chainId: CHAIN_ID,
     },
-  },$
+  },
   {
     id: 'walletconnectV2',
     properties: {
