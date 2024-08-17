@@ -8,6 +8,7 @@ import { usePath } from '@/hooks/shared'
 import { isAddress } from 'ethers/lib/utils'
 import { addressesEqual } from '@/utils/web3-utils'
 import { useConnect } from '@1hive/connect-react'
+import { getSubgraphUrl } from '@/utils/subgraph'
 
 const AppConnectorContext = createContext()
 
@@ -34,7 +35,10 @@ async function rawLoadOrCreateConnectedApp(app) {
     return
   }
 
-  const connectedApp = await connect(app)
+  const connectedApp = await connect(app, [
+    'thegraph',
+    { subgraphUrl: getSubgraphUrl(app.name) },
+  ])
 
   CONNECTED_APPS_CACHE[app.address] = connectedApp
 
