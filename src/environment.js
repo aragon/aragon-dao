@@ -29,6 +29,7 @@ const ENV_VARS = {
   IPFS_RESOLVER: process.env.IPFS_RESOLVER || null,
   ETHERSCAN_API_KEY: process.env.ETHERSCAN_API_KEY || null,
   WALLETCONNECTV2_PROJECTID: process.env.WALLETCONNECTV2_PROJECTID || null,
+  SUBGRAPH_API_KEY: throwIfNotExists(process.env.SUBGRAPH_API_KEY),
 }
 
 export function env(name) {
